@@ -6,3 +6,6 @@
   --font-pacifico: "Pacifico", system-ui, sans-serif;
 }
 
+::-webkit-scrollbar {
+  @apply hidden;
+}
