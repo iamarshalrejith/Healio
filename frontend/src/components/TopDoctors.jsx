@@ -1,9 +1,11 @@
-import React from 'react'
-import { doctors } from '../assets/assets.js'
+import React, { useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { AppContext } from '../context/AppContext';
 
 const TopDoctors = () => {
-    const navigate = useNavigate()
+    const navigate = useNavigate();
+    const {doctors} = useContext(AppContext);
+
   return (
     <div className="max-w-6xl mx-auto px-4 py-10 text-center">
       <h1 className="text-3xl font-semibold text-gray-800 mb-2">Top Doctors to Book</h1>
@@ -31,7 +33,7 @@ const TopDoctors = () => {
         ))}
       </div>
 
-      <button className="mt-10 px-6 py-2.5 bg-gray-950  text-white font-medium rounded-xl shadow hover:bg-black transition">
+      <button onClick={()=>{navigate('/doctors'); scrollTo(0,0)}} className="mt-10 px-6 py-2.5 bg-gray-950  text-white font-medium rounded-xl shadow hover:bg-black transition">
         More
       </button>
     </div>
